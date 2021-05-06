@@ -8,6 +8,7 @@
 
 void logo(void);
 void vider_buffer(void);
-
+void action ();
+int add_token(char *grid, int indice_colonne, char *jeton);
 
 #endif //PUISSANCE_N_FONCTIONS_H
