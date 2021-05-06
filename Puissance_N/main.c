@@ -19,10 +19,12 @@ char choice;
             case 'N':
                 //appelfonctionnouvelle partie
                 printf("Nouvelle partie");
+                action();
                 break;
             case 'S':
                 //appelfonction charger sauvegarde
                 printf("Chargement en cours");
+                action();
                 break;
             case 'Q':
                 //quitter
@@ -39,4 +41,3 @@ char choice;
 
 return EXIT_SUCCESS;
 }
-
