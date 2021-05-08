@@ -10,5 +10,11 @@ void logo(void);
 void vider_buffer(void);
 void action ();
 int add_token(char *grid, int indice_colonne, char *jeton);
+void show_grid(char grille, int largeur, int hauteur);
+
+  
+
+    
+
 
 #endif //PUISSANCE_N_FONCTIONS_H
