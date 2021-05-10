@@ -65,10 +65,12 @@ int add_token(char *grid, int indice_colonne, char *jeton){//verification colonn
 }
 
 
-void show_grid(char grille,int largeur, int hauteur){
-    for (int i=0 ; i<largeur ; i++){
-        for (int j=0 ; j<hauteur ; j++){
-            printf("{%c}\n", grille[i][j]);
+void show_grid(char** grille,int largeur, int hauteur){
+    for (int i=0;i<largeur;i++){
+        for (int j=0;j<hauteur;j++){
+            printf("{%c}",grille[i][j]);
+
         }
+        printf("\n");
     }
-}//fonction show grid a changer car le printf ne renvoie pas sur forme d'un tableau
+}
