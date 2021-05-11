@@ -11,7 +11,7 @@ void vider_buffer(void);
 void action ();
 int add_token(char *grid, int indice_colonne, char *jeton);
 void show_grid(char grille, int largeur, int hauteur);
-
+int check_winner(char **grid, int n);
   
 
     
