@@ -6,11 +6,17 @@
 #ifndef PUISSANCE_N_FONCTIONS_H
 #define PUISSANCE_N_FONCTIONS_H
 
+typedef struct{
+    int hauteur;
+    int largeur;
+    char** grille;
+}Grid;
+
 void logo(void);
 void vider_buffer(void);
 void action ();
 int add_token(char *grid, int indice_colonne, char *jeton);
-void show_grid(char grille, int largeur, int hauteur);
+void show_grid(char** grille, int largeur, int hauteur);
 int check_winner(char **grid, int n);
   
 
