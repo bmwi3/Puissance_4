@@ -6,13 +6,6 @@
 #include "fonctions.c"
 
 
-
-typedef struct{
-    int hauteur;
-    int largeur;
-    char grille;
-}Grid;
-
 int main(int argc, char* argv[]) {
 logo();
 char choice;
