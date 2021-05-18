@@ -48,9 +48,10 @@ void action (){ // fonction qui permet de proposer les differentes actions possi
 
 }
 
-int add_token(char *grid, int indice_colonne, char *jeton){//verification colonne, verif jeton, modif colon return
-    if (indice_colonne<0 || indice_colonne> colonnemax || grid[indice_colonne-1][0]!=' '){
+/*int add_token(char *grid, int indice_colonne, char *jeton, int colonne_max){//verification colonne, verif jeton, modif colon return
+    if (indice_colonne<0 || indice_colonne> colonne_max || grid[indice_colonne-1][0]!=' '){
         return 0;
+        printf("Impossible dans cette colonne!\n");
     } else{
         if (jeton=='O'){
             grid[indice_colonne-1][0]='O';
@@ -62,6 +63,60 @@ int add_token(char *grid, int indice_colonne, char *jeton){//verification colonn
         }
     }
 
+}
+
+int remove_token(char *grid, int indice_colonne, char *jeton, int colonne_max){//verification colonne, verif jeton, modif colon return
+    if (indice_colonne<0 || indice_colonne> colonne_max || grid[indice_colonne-1][0]!=' '){
+        return 0;
+        printf("Impossible dans cette colonne!\n");
+    } else{
+        if (jeton=='O'){
+            grid[indice_colonne-1][0]='O';
+            return 1;
+        }
+        else if (jeton=='X'){
+            grid[indice_colonne-1][0]='X';
+            return 1;
+        }
+    }
+
+}*/
+int add_token_bis(char**grid,char jeton, int colonne,int largeur) {
+    int i = 0;
+    if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
+        return 0;                               //
+    }
+    if (grid[0][colonne] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+        return 0;
+    }
+
+    while ( grid[i][colonne] == ' ' && (i<largeur) )	//tant que l'on n'a pas une case vide on descent
+    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
+        i++;
+    }
+
+    grid[i-1][colonne]=jeton;			//on ajoute un pion a la case dessus
+
+    return 1;
+}
+
+int remove_token_bis(char**grid, int colonne,int largeur) {
+    int i = 0;
+    if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
+        return 0;                               //
+    }
+    if (grid[0][colonne] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+        return 0;
+    }
+
+    while ( grid[i][colonne] == ' ' && (i<largeur) )	//tant que l'on n'a pas une case vide on descent
+    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
+        i++;
+    }
+
+    grid[i][colonne]=' ';			//on ajoute un pion a la case dessus
+
+    return 1;
 }
 
 
