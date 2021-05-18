@@ -3,12 +3,14 @@
 #include <ctype.h>
 #include <string.h>
 #include "fonctions.h"  //on inclut la librairie
-#include "fonctions.c"
+
 
 
 int main(int argc, char* argv[]) {
-logo();
-char choice;
+    logo();
+    char choice,jeton;
+    int num_col=0, N;
+    Grid g1;
 
     do {
         printf("Bienvenue sur le jeux Puissance N !\nNouvelle partie: N\nCharger une sauvegarde: S\nQuitter: Q\n");
@@ -32,14 +34,14 @@ char choice;
                 printf("bye");
                 break;
             default:
-        ;
+                ;
         }
-            vider_buffer(); //permet de liberer le charactère dans choice
+        vider_buffer(); //permet de liberer le charactère dans choice
 
-        } while (choice!='S'&& choice!='N'&& choice!='Q');
+    } while (choice!='S'&& choice!='N'&& choice!='Q');
+
+   
     
-    int N;
-    Grid g1;
     printf("entrer la valeur de N:\n");
     scanf("%d",&N);
     while(N<0){
@@ -50,18 +52,24 @@ char choice;
     g1.largeur = N+2;
     g1.hauteur = N+2;
 
-    g1.grille = (char**) malloc(sizeof (char*)*g1.largeur);
+    g1.grille = (char**) malloc(sizeof (char*) * g1.largeur);
     for (int i=0;i<g1.largeur;i++){
         g1.grille[i]=(char*) malloc(sizeof (char)*g1.hauteur);
         for (int j=0;j<g1.hauteur;j++){
-            g1.grille[i][j]='_';
+            g1.grille[i][j] = ' ';
         }
     }
 
     show_grid(g1.grille,g1.largeur,g1.hauteur);
 
+    do {
+        printf("\nentrez une colone : ");
+        scanf("%d",&num_col);
+        show_grid(g1.grille,g1.largeur,g1.hauteur);
+    }
+    while(add_token_bis(g1.grille, jeton, num_col-1, g1.largeur)==0);
 
+    show_grid(g1.grille,g1.largeur,g1.hauteur);
 
-
-return EXIT_SUCCESS;
+    return 0;
 }
