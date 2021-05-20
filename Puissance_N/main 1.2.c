@@ -24,8 +24,14 @@ int main () {
        }
         while (nombre_de_joueur != ( 1 || 2))}
 
-    printf("nombre de jeton à assembler/n"); // pas 1,2 ou plus de 20
-    scanf("%d",n);
+    printf("choisir n le nombre de jeton à aligner, choix de n entre 3 et 20/n"); 
+    do
+      scanf("%d",n);
+      if (n < 3 || n > 20){
+      printf("Impossible, choisir n entre 3 et 20");
+      while (n < 3 || n > 20 );
+      }
+        
   break;
   
   cas 2:
