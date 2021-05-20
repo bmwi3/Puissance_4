@@ -60,16 +60,16 @@ int main(int argc, char* argv[]) {
         }
     }
 
-    show_grid(g1.grille,g1.largeur,g1.hauteur);
+    show_grid(g1);
 
     do {
         printf("\nentrez une colone : ");
         scanf("%d",&num_col);
-        show_grid(g1.grille,g1.largeur,g1.hauteur);
+        show_grid(g1);
     }
     while(add_token_bis(g1.grille, jeton, num_col-1, g1.largeur)==0);
 
-    show_grid(g1.grille,g1.largeur,g1.hauteur);
+    show_grid(g1);
 
     return 0;
 }
