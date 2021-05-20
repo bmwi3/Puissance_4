@@ -56,7 +56,7 @@ int main(int argc, char* argv[]) {
     for (int i=0;i<g1.largeur;i++){
         g1.grille[i]=(char*) malloc(sizeof (char)*g1.hauteur);
         for (int j=0;j<g1.hauteur;j++){
-            g1.grille[i][j] = ' ';
+            g1.grille[i][j] = '_';
         }
     }
 
