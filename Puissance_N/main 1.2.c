@@ -53,9 +53,23 @@ logo()
 do {
   int alea=0,i=0,player=0;
   alea=rand()%2;
-  char jeton, replay;
-  
+  char jeton, replay,joueur1, joueur2;
   player=alea[]%2+1
+    
+    
+  if (nombre_de_joueur == 2){
+    printf("entrer le nom du joueur 1/n");
+    scanf("%s",joueur1)
+    printf("entrer le nom du joueur 2/n");
+    scanf("%s",joueur2)
+  }else {
+      printf("entrer le nom du joueur 1/n");
+      scanf("%s",joueur1)
+      joueur2=IA
+  }
+  
+  printf("joueur%d a vous de commencez",player);
+  
   
   do {
     if (i%2==0) {
