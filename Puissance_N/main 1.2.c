@@ -8,7 +8,7 @@ int main () {
  do 
    scanf("%d",start);
    if (start != ( 0 || 1 || 2)){
-      printf("Impossible, choisir 0, 1 ou 2");
+      printf("Impossible, choisir 0, 1 ou 2/n");
      }
  while (start != ( 0 || 1 || 2))}
    
@@ -20,7 +20,7 @@ int main () {
        scanf("%d",nombre_de_joeur);
 
        if (nombre_de_joueur != ( 1 || 2)){
-       printf("Impossible, choisir 1 ou 2");
+       printf("Impossible, choisir 1 ou 2/n");
        }
         while (nombre_de_joueur != ( 1 || 2))}
 
@@ -28,7 +28,7 @@ int main () {
     do
       scanf("%d",n);
       if (n < 3 || n > 20){
-      printf("Impossible, choisir n entre 3 et 20");
+      printf("Impossible, choisir n entre 3 et 20/n");
       while (n < 3 || n > 20 );
       }
         
