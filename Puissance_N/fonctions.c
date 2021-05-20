@@ -121,6 +121,11 @@ int remove_token_bis(char**grid, int colonne,int largeur) {
 
 
 void show_grid(char** grille,int largeur, int hauteur){
+    for(int k=0;k<largeur;k++){
+        printf(" %d ",k+1);
+
+    }
+    printf("\n");
     for (int i=0;i<largeur;i++){
         for (int j=0;j<hauteur;j++){
             printf("|%c|",grille[i][j]);
