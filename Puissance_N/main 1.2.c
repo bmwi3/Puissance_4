@@ -53,7 +53,7 @@ logo()
 do {
   int alea=0,i=0,player=0;
   alea=rand()%2;
-  char jeton, replay,joueur1, joueur2;
+  char jetonX, jetonO, replay,joueur1, joueur2;
   player=alea[]%2+1
     
     
@@ -68,7 +68,7 @@ do {
       joueur2=IA
   }
   
-  printf("joueur%d a vous de commencez",player);
+ 
   
   
   do {
@@ -77,7 +77,7 @@ do {
       player;
     }
     else {
-      jeton='X';
+     jeton='X';
       player++;
     }
 printf("Joueur %d à vous !\n",player );
