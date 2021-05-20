@@ -81,7 +81,7 @@ int remove_token(char *grid, int indice_colonne, char *jeton, int colonne_max){/
     }
 
 }*/
-int add_token_bis(char**grid,char jeton, int colonne,int largeur) {
+/*int add_token_bis(char**grid,char jeton, int colonne,int largeur) {
     int i = 0;
     if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
@@ -98,9 +98,9 @@ int add_token_bis(char**grid,char jeton, int colonne,int largeur) {
     grid[i-1][colonne]=jeton;			//on ajoute un pion a la case dessus
 
     return 1;
-}
+}*/
 
-int remove_token_bis(char**grid, int colonne,int largeur) {
+/*int remove_token_bis(char**grid, int colonne,int largeur) {
     int i = 0;
     if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
@@ -118,7 +118,7 @@ int remove_token_bis(char**grid, int colonne,int largeur) {
 
     return 1;
 }
-
+*/
 
 void show_grid(Grid g1){
     for(int k=0;k<g1.largeur;k++){
@@ -197,4 +197,30 @@ int check_winner(Grid g1,int n) {
     }
 
 
+}
+
+int option_choice(){
+int choice=0;
+do {
+printf("Voulez vous :\n 1.Ajouter un jeton\n 2.Enlever un jeton\n 3.Sauvegarder et quitter\n");
+scanf("%d",&choice);
+} while(choice!=(1||2||3));
+return choice;
+
+}
+int add_token_bis(Grid g1,char jeton,int colonne) {
+
+    int j=0;
+
+    while (g1.grille[j][colonne-1]!=jeton && j<g1.largeur-1){
+        j=j+1;
+    }
+    if (g1.grille[j][colonne-1]!=jeton){
+        g1.grille[j][colonne-1]=jeton;
+    }else{
+        g1.grille[j-1][colonne-1]=jeton;
+    }
+
+
+    return 1;
 }
