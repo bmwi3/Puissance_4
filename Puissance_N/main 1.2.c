@@ -99,7 +99,7 @@ int option_choice(NULL){
   do {
     printf("Voulez vous :\n 1.Ajouter un jeton\n 2.Enlever un jeton\n 3.Sauvegarder et quitter\n");
     scanf("%d",&choice);
-  } while(choice!=1||2||3);
+  } while(choice!=(1||2||3));
   return choice;
   
 }
