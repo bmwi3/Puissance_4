@@ -9,8 +9,7 @@ int main () {
   int option_choice(NULL);
   srand(time(NULL));
   
- //printf le logo
-  
+logo()  
  printf("Bienvenue au puissance N /nNouvelle partie : 1 /nPartie chargée : 2 /nQuitter : 0/n");
  
  do 
