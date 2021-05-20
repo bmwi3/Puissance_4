@@ -55,14 +55,16 @@ do {
   alea=rand()%2;
   char jeton, replay;
   
+  player=alea[]%2+1
+  
   do {
     if (i%2==0) {
       jeton='O';
-      player=1;
+      player;
     }
     else {
       jeton='X';
-      player=2;
+      player++;
     }
 printf("Joueur %d à vous !\n",player );
 show_grid(g1);
