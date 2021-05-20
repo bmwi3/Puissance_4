@@ -136,10 +136,10 @@ void show_grid(Grid g1){
 }
 
 
-int check_winner(char **grid,int n) {
+int check_winner(Grid g1,int n) {
 
     int i, j = 0, x, y, somme1_ligne=0, somme2_ligne=0, somme3_ligne=0, somme1_colone=0, somme2_colone=0, somme3_colone=0;
-    int somme_diagonaled=g1.grille[x][y], somme_diagonaleg=0;
+    int somme_diagonaled=g1.grille[x][y], somme_diagonaleg=g1.grille[x][y];
     int a=1, b=1, c=1, d=1 , e=0;
 
     for (i = 0; i = n-1; i++){
