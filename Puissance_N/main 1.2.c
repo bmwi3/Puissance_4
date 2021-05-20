@@ -1,6 +1,13 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <ctype.h>
+#include <time.h>
+
 int main () {
   int n, nombre_de_joueur;
   int option_choice(NULL);
+  srand(time(NULL));
   
  //printf le logo
   
