@@ -13,7 +13,6 @@ typedef struct{
     char **grille;
 }Grid;
 
-
 void logo(void);
 void vider_buffer(void);
 void action ();
@@ -21,7 +20,10 @@ int add_token(char *grid, int indice_colonne, char *jeton,int colonne_max);
 int remove_token(char *grid, int indice_colonne, char *jeton,int colonne_max);
 void show_grid(Grid g1);
 int remove_token_bis(char**grid, int colonne,int largeur);
-int add_token_bis(char**grid,char jeton, int colonne,int largeur);
+//int add_token_bis(Grid g1,char jeton, int colonne);
+int check_winner(Grid g1,int n);
+int option_choice();
+int add_token_bis(Grid g1,char jeton,int colonne);
 
   
 
