@@ -136,61 +136,61 @@ void show_grid(Grid g1){
 }
 
 
-int check_winner(char **grid, int n) {
+int check_winner(char **grid,int n) {
 
-    int i, j = 0, h, n, x, y, nb1_ligne=0, nb2_ligne=0, nb3_ligne=0, nb1_colone=0, nb2_colone=0, nb3_colone=0;
-    int nb_diagonaled=grid[x][y], nb_diagonaleg=0;
+    int i, j = 0, x, y, somme1_ligne=0, somme2_ligne=0, somme3_ligne=0, somme1_colone=0, somme2_colone=0, somme3_colone=0;
+    int somme_diagonaled=g1.grille[x][y], somme_diagonaleg=0;
     int a=1, b=1, c=1, d=1 , e=0;
 
     for (i = 0; i = n-1; i++){
 
-        nb1_ligne += grid[i][y];
-        nb2_ligne += grid[i+1][y];
-        nb3_ligne += grid[i+2][y];
-        nb1_colone += grid[x][i];
-        nb2_colone += grid[x][i+1];
-        nb3_colone += grid[x][i+2];
+        somme1_ligne += g1.grille[i][y];
+        somme2_ligne += g1.grille[i+1][y];
+        somme3_ligne += g1.grille[i+2][y];
+        somme1_colone += g1.grille[x][i];
+        somme2_colone += g1.grille[x][i+1];
+        somme3_colone += g1.grille[x][i+2];
 
     }
     do{
 
         j++;
 
-        if (grid[x+j][y+j]!=grid[x][y]){
+        if (g1.grille[x+j][y+j]!=g1.grille[x][y]){
             a = 0;
 
         }
-        if (grid[x-j][d-j] !=grid[x][y]){
+        if (g1.grille[x-j][d-j] !=g1.grille[x][y]){
             b = 0;
 
         }
-        if (grid[x+j][y-j]!=grid[x][y]){
+        if (g1.grille[x+j][y-j]!=g1.grille[x][y]){
             c = 0;
 
         }
-        if (grid[x+j][d-j] !=grid[x][y]){
+        if (g1.grille[x+j][d-j] !=g1.grille[x][y]){
             d = 0;
 
         }
-        nb_diagonaled += b*grid[x-j][d-j] + a*grid[x+j][y+j];
-        nb_diagonaleg += c*grid[x+j][d-j] + d*grid[x+j][y-j];
+        somme_diagonaled += b*g1.grille[x-j][d-j] + a*g1.grille[x+j][y+j];
+        somme_diagonaleg += c*g1.grille[x+j][d-j] + d*g1.grille[x+j][y-j];
         e = a + b + c + d;
 
     }while ( e != 0 );
 
-    if ((nb2_ligne || nb3_ligne ||nb1_ligne) == n * grid[x][y]) {
-        printf("joueur %c gagne", grid[x][y]);
+    if ((somme2_ligne || somme3_ligne ||somme1_ligne) == n * g1.grille[x][y]) {
+        printf("joueur %c gagne", g1.grille[x][y]);
         return 1;
 
-    } else if ((nb1_colone || nb2_colone ||nb3_colone) == n * grid[x][y]) {
-        printf("joueur %c gagne", grid[x][y]);
+    } else if ((somme1_colone || somme2_colone ||somme3_colone) == n * g1.grille[x][y]) {
+        printf("joueur %c gagne", g1.grille[x][y]);
         return 1;
 
-    }else if(nb_diagonaled == n * grid[x][y]){
-        printf("joueur %c gagne", grid[x][y]);
+    }else if(somme_diagonaled == n * g1.grille[x][y]){
+        printf("joueur %c gagne", g1.grille[x][y]);
         return 1;
-    }else if(nb_diagonaled == n * grid[x][y]){
-        printf("joueur %c gagne", grid[x][y]);
+    }else if(somme_diagonaled == n * g1.grille[x][y]){
+        printf("joueur %c gagne", g1.grille[x][y]);
         return 1;
     }else{
         return 0;
