@@ -16,8 +16,15 @@ int main () {
   
   cas 1:
     printf("combien de joueur: 1 ou 2/n");
-    scanf("%d",nombre_de_joeur);
-    printf("nombre de jeton à assembler/n");
+     do 
+       scanf("%d",nombre_de_joeur);
+
+       if (nombre_de_joueur != ( 1 || 2)){
+       printf("Impossible, choisir 1 ou 2");
+       }
+        while (nombre_de_joueur != ( 1 || 2))}
+
+    printf("nombre de jeton à assembler/n"); // pas 1,2 ou plus de 20
     scanf("%d",n);
   break;
   
@@ -27,7 +34,8 @@ int main () {
   
   cas 3:
     return 0;
-    break ;
+    break;
+   default;
   
   
   
