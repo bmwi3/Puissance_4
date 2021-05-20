@@ -120,20 +120,21 @@ int remove_token_bis(char**grid, int colonne,int largeur) {
 }
 
 
-void show_grid(char** grille,int largeur, int hauteur){
-    for(int k=0;k<largeur;k++){
+void show_grid(Grid g1){
+    for(int k=0;k<g1.largeur;k++){
         printf(" %d ",k+1);
 
     }
     printf("\n");
-    for (int i=0;i<largeur;i++){
-        for (int j=0;j<hauteur;j++){
-            printf("|%c|",grille[i][j]);
+    for (int i=0;i<g1.largeur;i++){
+        for (int j=0;j<g1.hauteur;j++){
+            printf("|%c|",g1.grille[i][j]);
 
         }
         printf("\n");
     }
 }
+
 
 int check_winner(char **grid, int n) {
 
