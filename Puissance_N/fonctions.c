@@ -93,7 +93,15 @@ int  check_winner(Grid g1,int n,int x) {
 
 
 
-       if (y==0) { //regarde si il y a egalite
+    if (compteur_ligne ||  compteur_colone || compteur_diagonaled || compteur_diagonaleg == n){
+        if (g1.grille[x][y] == 'O') {
+            printf("joueur 1 gagne bravo\n");
+            return 0;
+        }else {
+            printf("joueur 2 gagne bravo\n");
+            return 1;
+        }
+    }  else if (y==0) { //regarde si il y a egalite
         do {
             if (g1.grille[compteur_egalite][0] != '_') {
                 compteur_egalite++;
@@ -103,20 +111,10 @@ int  check_winner(Grid g1,int n,int x) {
         if (compteur_egalite == n + 2) {
             printf("egalite\n");
             return 2;
-
-        }
-    }  else if (compteur_ligne  || compteur_colone ||compteur_diagonaled || compteur_diagonaleg == n){
-        if (g1.grille[x][y] == 'O') {
-            printf("joueur 1 gagne bravo\n");
-            return 0;
-        }else {
-            printf("joueur 2 gagne bravo\n");
-            return 1;
         }
     }else {
         return -1;
     }
-    
 
  
 }
