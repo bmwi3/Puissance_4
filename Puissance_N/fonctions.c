@@ -30,10 +30,9 @@ void show_grid(Grid g1){
     }
 }
 
-#include <stdio.h>
-#include <stdlib.h>
 
-int  check_winner(Grid g1,int n) {
+
+int  check_winner(Grid g1,int n,int x) {
 
     int i, j = 0, x, y;
     int compteur_ligne=1, compteur_colone=1;
