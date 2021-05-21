@@ -15,111 +15,6 @@ void logo(void) {
     printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |                                             \n");
 };
 
-void vider_buffer(void) //permet de videer le buffer
-{
-    int c;
-
-    do {
-        c = getchar();
-    } while (c != '\n' && c != EOF);
-}
-
-void action (){ // fonction qui permet de proposer les differentes actions possible au joueur
-    int c=0;
-
-    printf("Voulez-vous:\n1.Ajouter un jeton\n2.Enlever un jeton\n3.Quitter\n");
-    scanf("%d",&c);
-    do {
-        switch (c) {
-            case 1:
-                //appel de fonction add_token
-                printf("appel de fonction add_token\n");
-                break;
-            case 2:
-                //appel de fonction remove_token
-                printf("appel de fonction remove_token");
-                break;
-            case 3:
-                break;
-            default:
-                ;
-        }
-    } while (c!=1 && c!=2 && c!=3);
-
-}
-
-/*int add_token(char *grid, int indice_colonne, char *jeton, int colonne_max){//verification colonne, verif jeton, modif colon return
-    if (indice_colonne<0 || indice_colonne> colonne_max || grid[indice_colonne-1][0]!=' '){
-        return 0;
-        printf("Impossible dans cette colonne!\n");
-    } else{
-        if (jeton=='O'){
-            grid[indice_colonne-1][0]='O';
-            return 1;
-        }
-        else if (jeton=='X'){
-            grid[indice_colonne-1][0]='X';
-            return 1;
-        }
-    }
-
-}
-
-int remove_token(char *grid, int indice_colonne, char *jeton, int colonne_max){//verification colonne, verif jeton, modif colon return
-    if (indice_colonne<0 || indice_colonne> colonne_max || grid[indice_colonne-1][0]!=' '){
-        return 0;
-        printf("Impossible dans cette colonne!\n");
-    } else{
-        if (jeton=='O'){
-            grid[indice_colonne-1][0]='O';
-            return 1;
-        }
-        else if (jeton=='X'){
-            grid[indice_colonne-1][0]='X';
-            return 1;
-        }
-    }
-
-}*/
-/*int add_token_bis(char**grid,char jeton, int colonne,int largeur) {
-    int i = 0;
-    if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
-        return 0;                               //
-    }
-    if (grid[0][colonne] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
-        return 0;
-    }
-
-    while ( grid[i][colonne] == ' ' && (i<largeur) )	//tant que l'on n'a pas une case vide on descent
-    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
-        i++;
-    }
-
-    grid[i-1][colonne]=jeton;			//on ajoute un pion a la case dessus
-
-    return 1;
-}*/
-
-/*int remove_token_bis(char**grid, int colonne,int largeur) {
-    int i = 0;
-    if (colonne < 0 || colonne > largeur) {     // si la bonne colonne n'appartient pas au tableau
-        return 0;                               //
-    }
-    if (grid[0][colonne] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
-        return 0;
-    }
-
-    while ( grid[i][colonne] == ' ' && (i<largeur) )	//tant que l'on n'a pas une case vide on descent
-    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
-        i++;
-    }
-
-    grid[i][colonne]=' ';			//on ajoute un pion a la case dessus
-
-    return 1;
-}
-*/
-
 void show_grid(Grid g1){
     for(int k=0;k<g1.largeur;k++){
         printf(" %d ",k+1);
@@ -208,19 +103,23 @@ scanf("%d",&choice);
 return choice;
 
 }
-int add_token_bis(Grid g1,char jeton,int colonne) {
-
-    int j=0;
-
-    while (g1.grille[j][colonne-1]!=jeton && j<g1.largeur-1){
-        j=j+1;
+int add_token_bis(Grid g1,char jeton, int colonne){
+    int i = 0;
+    if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
+        return 0;                               //
     }
-    if (g1.grille[j][colonne-1]!=jeton){
-        g1.grille[j][colonne-1]=jeton;
-    }else{
-        g1.grille[j-1][colonne-1]=jeton;
+    if (g1.grille[0][colonne-1] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+        return 0;
     }
-
+printf("Done\n");
+    while ( (g1.grille[i][colonne-1] != 'O'&&'X') && i<g1.largeur-1 )	//tant que l'on n'a pas une case vide on descent
+    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
+        i++;
+    }
+    if (g1.grille[i][colonne-1] != 'O'&&'X'){
+        g1.grille[i][colonne-1]=jeton;
+    }
+    else{g1.grille[i-1][colonne-1]=jeton;}			//on ajoute un pion a la case dessus
 
     return 1;
 }
