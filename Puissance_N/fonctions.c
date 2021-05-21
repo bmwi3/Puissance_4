@@ -104,10 +104,10 @@ int  check_winner(Grid g1,int n,int x) {
             printf("egalite");
             return 2;
         }  else if (compteur_ligne  || compteur_colone ||compteur_diagonaled || compteur_diagonaleg == n){
-                    if (g1.grille[x][y] == 'O')
+                    if (g1.grille[x][y] == 'O'){
                          printf("joueur 1 gagne bravo\n");
                          return 0;
-                    else{
+                    }else{
                          printf("joueur 2 gagne bravo\n");
                         return 1;
                     }
