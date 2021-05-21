@@ -124,6 +124,9 @@ switch(choice) {
 }
 printf("gg\n");
 show_grid(g1);
+    add_token_bis(g1,'X',colonne);
+    show_grid(g1);
+
 check_winner(g1,n);
 printf("hii");
 i++;
@@ -138,4 +141,3 @@ scanf("%c",replay);
 
 
 }
-
