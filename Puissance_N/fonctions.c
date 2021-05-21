@@ -108,7 +108,7 @@ int  check_winner(Grid g1,int n) {
             printf("joeur %s gagne!\n",'g1.grille[x][y]');
             return 1;
         } else {
-            return 0;
+            return -1;
         }
     }
  
