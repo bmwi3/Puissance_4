@@ -67,74 +67,75 @@ int main () {
     }
 
 do {
-int i=0;
-int alea=rand()%2;
-char jeton,joueur1[26], joueur2[26],ia="IA";
-int player=alea%2+1;
+    int i=0;
+    int alea=rand()%2;
+    char jeton,ia="IA";
+    int player=alea%2+1;
+    personne player1,player2;
 
 
-if (nombre_de_joueur == 2){
-printf("entrer le nom du joueur 1\n");
-scanf("%s",joueur1);
-printf("entrer le nom du joueur 2\n");
-scanf("%s",joueur2);
-}else {
-printf("entrer le nom du joueur 1\n");
-scanf("%s",joueur1);
-strcpy(joueur2,ia);
-}
+    if (nombre_de_joueur == 2){
+        printf("entrer le nom du joueur 1\n");
+        scanf("%s",player1.pseudo);
+        printf("entrer le nom du joueur 2\n");
+        scanf("%s",player2.pseudo);
+    }else {
+        printf("entrer le nom du joueur 1\n");
+        scanf("%s",player1.pseudo);
+        strcpy(player2.pseudo,ia);
+    }
 
-printf("joueur %d a vous de commencez\n",player);
+    printf("joueur %d a vous de commencez\n",player);
 
 
-do {
-if (i%2==0) {
-jeton='O';
-player;
-}
-else {
-jeton='X';
-player++;
-}
-printf("Joueur %d à vous !\n",player );
-show_grid(g1);
+    do {
+        if (i%2==0) {
+            jeton='O';
+            player;
+        }
+        else {
+            jeton='X';
+            player++;
+        }
+        printf("Joueur %d à vous !\n",player );
+        show_grid(g1);
 
-int choice=option_choice();
+        int choice=option_choice();
 
-switch(choice) {
-    case 1:
+        switch(choice) {
+            case 1:
 
-            printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
-            scanf("%d",&colonne);
-            add_token_bis(g1,jeton,colonne);
+                printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
+                scanf("%d",&colonne);
+                add_token_bis(g1,jeton,colonne);
 
-        break;
+            break;
 
-    case 2:
-        //remove_token;
-        break;
+            case 2:
+                //remove_token;
+            break;
 
-    case 3:
-        printf("fonction savesave") ;
-        return 0;
-        break;
+            case 3:
+                printf("fonction savesave") ;
+                return 0;
+                break;
 
-    default:
-        {}
-}
-printf("gg\n");
-show_grid(g1);
-    add_token_bis(g1,'X',colonne);
-    show_grid(g1);
+            default:
+            {}
+        }
+        printf("gg\n");
+        show_grid(g1);
+        add_token_bis(g1,'X',colonne);
+        show_grid(g1);
 
-check_winner(g1,n);
-printf("hii");
-i++;
-printf("%d",i);
-} while(check_winner(g1,n)==1 || check_winner(g1,n)==0);
+        check_winner(g1,n);
+        printf("hii");
+        i++;
+        printf("%d",i);
+    } while(check_winner(g1,n)==1 || check_winner(g1,n)==0);
 
-printf("Voulez-vous recommencer?\n");
-scanf("%c",replay);
+    printf("Voulez-vous recommencer?\n");
+    scanf("%c",replay);
 
 } while(toupper(replay)=='O');
 
