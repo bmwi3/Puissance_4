@@ -6,6 +6,9 @@
 #ifndef PUISSANCE_N_FONCTIONS_H
 #define PUISSANCE_N_FONCTIONS_H
 
+typedef struct {
+    char pseudo[30],jeton
+}personne;
 
 typedef struct{
     int hauteur;
