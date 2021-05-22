@@ -32,7 +32,7 @@ void show_grid(Grid g1){
 
 
 
-int  check_winner(Grid g1,int n,int x) {
+int  check_winner(Grid g1,int n) {
 
     int j = 0, x, y;
     int compteur_ligne=1, compteur_colone=1;
@@ -107,7 +107,7 @@ int  check_winner(Grid g1,int n,int x) {
                 compteur_egalite++;
             }
 
-        } while (g1.grille[compteur_egalite][0] != '_')
+        } while (g1.grille[compteur_egalite][0] != '_');
         if (compteur_egalite == n + 2) {
             printf("egalite\n");
             return 2;
