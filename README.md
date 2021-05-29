@@ -1,4 +1,4 @@
-# Puissance_N
+# Puissance_N Porjet
 projet en c
 jeu à realiser
 
