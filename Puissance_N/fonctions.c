@@ -128,7 +128,7 @@ scanf("%d",&choice);
 return choice;
 
 }
-int add_token_bis(Grid g1,char jeton, int colonne){
+int add_token_bis(Grid g1,char jeton, int colonne,int *x){
     int i = 0;
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
@@ -136,15 +136,42 @@ int add_token_bis(Grid g1,char jeton, int colonne){
     if (g1.grille[0][colonne-1] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
         return 0;
     }
-printf("Done\n");
-    while ( (g1.grille[i][colonne-1] != 'O'&&'X') && i<g1.largeur-1 )	//tant que l'on n'a pas une case vide on descent
+    while ( (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X') && i<g1.largeur-1 )	//tant que l'on n'a pas une case vide on descent
     {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
         i++;
     }
-    if (g1.grille[i][colonne-1] != 'O'&&'X'){
+    if (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X'){
         g1.grille[i][colonne-1]=jeton;
+        *x=i-1;
     }
     else{g1.grille[i-1][colonne-1]=jeton;}			//on ajoute un pion a la case dessus
+        *x=i+1;
+    return 1;
+}
+int remove_token(Grid g1,char jeton, int colonne){
+    int i = 0;
+    if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
+        return 0;                               //
+    }
+    if (g1.grille[0][colonne-1] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+        return 0;
+    }
+
+    while ( (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X') && i<g1.largeur-1 )	//tant que l'on n'a pas une case vide on descent
+    {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
+        i++;
+    }
+    if(g1.grille[i][colonne-1]==jeton){
+        printf("Vous ne pouvez pas retirer votre propore jeton\n");
+        return 0;
+    }
+    if(i==g1.largeur || g1.grille[i][colonne-1]==' '){
+        printf("Il n'y a rien à retirer\n");
+        return 0;
+    }
+    if (g1.grille[i][colonne-1] != ' '&& g1.grille[i][colonne-1] != jeton){
+        g1.grille[i][colonne-1]=' ';
+    }
 
     return 1;
 }
