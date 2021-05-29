@@ -6,10 +6,12 @@
 #include "fonctions.h"
 
 int main () {
+    int x=0;
+
     int n=0,colonne=0, nombre_de_joueur=0,start=0;
     srand(time(NULL));
     Grid g1;
-    char replay;
+    int replay=0;
 
 
     logo();
@@ -45,11 +47,11 @@ int main () {
 
             break;
 
-            case 2:
-                //fonction load partie chargé
+        case 2:
+            //fonction load partie chargé
             break;
 
-            case 3:
+        case 3:
             return 0;
             break;
         default:
@@ -66,78 +68,76 @@ int main () {
         }
     }
 
-do {
-    int i=0;
-    int alea=rand()%2;
-    char jeton,ia="IA";
-    int player=alea%2+1;
-    personne player1,player2;
-
-
-    if (nombre_de_joueur == 2){
-        printf("entrer le nom du joueur 1\n");
-        scanf("%s",player1.pseudo);
-        printf("entrer le nom du joueur 2\n");
-        scanf("%s",player2.pseudo);
-    }else {
-        printf("entrer le nom du joueur 1\n");
-        scanf("%s",player1.pseudo);
-        strcpy(player2.pseudo,ia);
-    }
-
-    printf("joueur %d a vous de commencez\n",player);
-
-
     do {
-        if (i%2==0) {
-            jeton='O';
-            player;
+        int i=0;
+        int alea=rand()%2;
+        char jeton,joueur1[26], joueur2[26];
+        int player=alea%2+1;
+
+
+        if (nombre_de_joueur == 2){
+            printf("entrer le nom du joueur 1\n");
+            scanf("%s",joueur1);
+            printf("entrer le nom du joueur 2\n");
+            scanf("%s",joueur2);
+        }else {
+            printf("entrer le nom du joueur 1\n");
+            scanf("%s",joueur1);
+            strcpy(joueur2,"ia");
         }
-        else {
-            jeton='X';
-            player++;
-        }
-        printf("Joueur %d à vous !\n",player );
-        show_grid(g1);
 
-        int choice=option_choice();
+        printf("joueur %d a vous de commencez\n",player);
 
-        switch(choice) {
-            case 1:
+        do {
+            if (i%2==0) {
+                jeton='O';
+                player=1;
+            }
+            else {
+                jeton='X';
+                player=2;
+            }
+            printf("Joueur %d a vous !\n",player );
+            //show_grid(g1);
 
-                printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
-                scanf("%d",&colonne);
-                add_token_bis(g1,jeton,colonne);
+            int choice=option_choice();
 
-            break;
+            switch(choice) {
+                case 1:
+                    do {
+                        printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
+                        scanf("%d",&colonne);
+                    } while (add_token_bis(g1,jeton,colonne,&x)==0);
+                    break;
 
-            case 2:
-                //remove_token;
-            break;
+                case 2:
+                    do {
+                        printf("Dans quelles colonnes voulez-vous retirer un jeton?\n");
+                        scanf("%d",&colonne);
+                    } while (remove_token(g1,jeton,colonne)==0);
+                    break;
 
-            case 3:
-                printf("fonction savesave") ;
-                return 0;
-                break;
+                case 3:
+                    printf("fonction savesave") ;
+                    return 0;
+                    break;
 
-            default:
-            {}
-        }
-        printf("gg\n");
-        show_grid(g1);
-        add_token_bis(g1,'X',colonne);
-        show_grid(g1);
+                default:
+                {}
+            }
 
-        check_winner(g1,n);
-        printf("hii");
-        i++;
-        printf("%d",i);
-    } while(check_winner(g1,n)==1 || check_winner(g1,n)==0);
+            show_grid(g1);
 
-    printf("Voulez-vous recommencer?\n");
-    scanf("%c",replay);
+        printf("%d",x);
+//check_winner(g1,n);
 
-} while(toupper(replay)=='O');
+            i++;
+        } while(i<5 );//check_winner(g1,n)==1 || check_winner(g1,n)==0);
+
+        printf("Voulez-vous recommencer?1.oui 2.non\n");
+        scanf("%d",&replay);
+
+    } while(replay==1);
 
 
 
