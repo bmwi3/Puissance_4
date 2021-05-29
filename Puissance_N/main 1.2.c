@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 #include <time.h>
-#include "fonctions.h"
+#include "fonction.h"
+
 
 int main () {
     int x=0;
@@ -128,7 +129,7 @@ int main () {
 
             show_grid(g1);
 
-        printf("%d",x);
+        //printf("%d",x);
 //check_winner(g1,n);
 
             i++;
