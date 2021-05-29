@@ -7,12 +7,12 @@
 #include <string.h>
 #include "fonctions.h"
 void logo(void) {
-    printf(" ____                                                  _______\n");
-    printf("|    |                                                |       |            \n");
-    printf("|____|                                                |       |                          \n");
-    printf("|         .   ___    ___   ___    ___    ___   ___    |       |                 \n");
-    printf("|  |   |  |  |___   |___  |___|  |   |  |     |___    |       |              \n");
-    printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |                                             \n");
+    printf(" ____                                                          \n");
+    printf("|    |                                                |       |\n");
+    printf("|____|                                                | |     |\n");
+    printf("|         .   ___    ___   ___    ___    ___   ___    |   |   |\n");
+    printf("|  |   |  |  |___   |___  |___|  |   |  |     |___    |     | |\n");
+    printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |\n");
 };
 
 void show_grid(Grid g1){
