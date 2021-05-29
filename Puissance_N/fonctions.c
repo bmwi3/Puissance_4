@@ -32,9 +32,9 @@ void show_grid(Grid g1){
 
 
 
-int  check_winner(Grid g1,int n) {
+int  check_winner(Grid g1,int n, int *x) {
 
-    int j = 0, x, y;
+    int j = 0, y;
     int compteur_ligne=1, compteur_colone=1;
     int compteur_diagonaled=1, compteur_diagonaleg=1;
     int compteur_egalite = 0;
@@ -45,35 +45,35 @@ int  check_winner(Grid g1,int n) {
 
         j++;
 
-        if (g1.grille[x+j][y+j]!=g1.grille[x][y]){  // on compare le dernier jeton jouer avec celui en bas a droite
+        if (g1.grille[*x+j][y+j]!=g1.grille[*x][y]){  // on compare le dernier jeton jouer avec celui en bas a droite
             a = 0;
 
         }
-        if (g1.grille[x-j][y-j] !=g1.grille[x][y]){  // on compare le dernier jeton jouer avec celui en haut a gauche
+        if (g1.grille[*x-j][y-j] !=g1.grille[*x][y]){  // on compare le dernier jeton jouer avec celui en haut a gauche
             b = 0;
 
         }
-        if (g1.grille[x+j][y-j]!=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en haut a droite
+        if (g1.grille[*x+j][y-j]!=g1.grille[*x][y]){ // on compare le dernier jeton jouer avec celui en haut a droite
             c = 0;
 
         }
-        if (g1.grille[x-j][y+j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en bas a gauche
+        if (g1.grille[*x-j][y+j] !=g1.grille[*x][y]){ // on compare le dernier jeton jouer avec celui en bas a gauche
             d = 0;
 
         }
-        if (g1.grille[x][y-j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui au dessus
+        if (g1.grille[*x][y-j] !=g1.grille[*x][y]){ // on compare le dernier jeton jouer avec celui au dessus
             e = 0;
 
         }
-        if (g1.grille[x][y+j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en dessous
+        if (g1.grille[*x][y+j] !=g1.grille[*x][y]){ // on compare le dernier jeton jouer avec celui en dessous
             f = 0;
 
         }
-        if (g1.grille[x+j][y] !=g1.grille[x][y]){// on compare le dernier jeton jouer avec celui a sa droite
+        if (g1.grille[*x+j][y] !=g1.grille[*x][y]){// on compare le dernier jeton jouer avec celui a sa droite
             g = 0;
 
         }
-        if (g1.grille[x-j][y] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui a sa gauche
+        if (g1.grille[*x-j][y] !=g1.grille[*x][y]){ // on compare le dernier jeton jouer avec celui a sa gauche
             h = 0;
 
         }
@@ -85,7 +85,7 @@ int  check_winner(Grid g1,int n) {
 
         l = a + b + c + d + e + f + g + h;
 
-        if (compteur_ligne  || compteur_colone ||compteur_diagonaled || compteur_diagonaleg == n){
+        if (compteur_ligne == n || compteur_colone == n ||compteur_diagonaled == n || compteur_diagonaleg == n){
             l =0;
         }
 
@@ -93,8 +93,8 @@ int  check_winner(Grid g1,int n) {
 
 
 
-    if (compteur_ligne ||  compteur_colone || compteur_diagonaled || compteur_diagonaleg == n){
-        if (g1.grille[x][y] == 'O') {
+    if (compteur_ligne == n ||  compteur_colone == n || compteur_diagonaled == n || compteur_diagonaleg == n){
+        if (g1.grille[x*][y] == 'O') {
             printf("joueur 1 gagne bravo\n");
             return 0;
         }else {
