@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/julie/CLionProjects/projet_bis/fct_save.c
+fct_save.h
+C:/Users/julie/CLionProjects/projet_bis/fct_save.h
+stdio.h
+-
+fonction.h
+C:/Users/julie/CLionProjects/projet_bis/fonction.h
+string.h
+-
+
+C:/Users/julie/CLionProjects/projet_bis/fct_save.h
+fonction.h
+C:/Users/julie/CLionProjects/projet_bis/fonction.h
+grid.h
+C:/Users/julie/CLionProjects/projet_bis/grid.h
+stdio.h
+-
+
+C:/Users/julie/CLionProjects/projet_bis/fonction.h
+grid.h
+C:/Users/julie/CLionProjects/projet_bis/grid.h
+
+C:/Users/julie/CLionProjects/projet_bis/grid.h
+
