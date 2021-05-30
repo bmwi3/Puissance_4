@@ -132,7 +132,7 @@ int main () {
 //check_winner(g1,n);
 
             i++;
-        } while(i<5 );//check_winner(g1,n)==1 || check_winner(g1,n)==0);
+        } while(check_winner(g1,colonne,jeton);==-1);
 
 
         printf("Voulez-vous recommencer?1.oui 2.non\n");
