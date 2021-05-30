@@ -18,89 +18,136 @@ void logo(void) {
 
 
 
-int  check_winner(Grid g1,int n) {
+int  check_winner(Grid g1, int colonne,char jeton) {
 
-    int j = 0, x, y;
-    int compteur_ligne=1, compteur_colone=1;
+    int j = 0, y = colonne - 1,x  = 0;
+    int compteur_ligne=1, compteur_colonne=1;
     int compteur_diagonaled=1, compteur_diagonaleg=1;
     int compteur_egalite = 0;
-    int a=1, b=1, c=1, d=1, e=1, f=1, g=1, h=1, l;
+    int a=1, b=1, c=1, d=1, e=1, f=1, g=1, l;
+
+    while (g1.grille[x][y]!=jeton && x<g1.largeur-1){
+        x++;
+    }
+    printf("x = %d\n",x);
+    printf("y = %d\n",y);
 
 
     do{
 
+
+
+
         j++;
 
-        if (g1.grille[x+j][y+j]!=g1.grille[x][y]){  // on compare le dernier jeton jouer avec celui en bas a droite
+        if (x+j > g1.largeur-1){
             a = 0;
-
-        }
-        if (g1.grille[x-j][y-j] !=g1.grille[x][y]){  // on compare le dernier jeton jouer avec celui en haut a gauche
-            b = 0;
-
-        }
-        if (g1.grille[x+j][y-j]!=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en haut a droite
             c = 0;
-
-        }
-        if (g1.grille[x-j][y+j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en bas a gauche
-            d = 0;
-
-        }
-        if (g1.grille[x][y-j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui au dessus
-            e = 0;
-
-        }
-        if (g1.grille[x][y+j] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui en dessous
-            f = 0;
-
-        }
-        if (g1.grille[x+j][y] !=g1.grille[x][y]){// on compare le dernier jeton jouer avec celui a sa droite
             g = 0;
-
+            printf("a,c,g\n");
         }
-        if (g1.grille[x-j][y] !=g1.grille[x][y]){ // on compare le dernier jeton jouer avec celui a sa gauche
-            h = 0;
-
+        if (x - j<0){
+            b = 0;
+            d = 0;
+            printf("b,d,h\n");
         }
+        if (g1.largeur -1 < y +j ){
+            a = 0;
+            d = 0;
+            f = 0;
+            printf("a,d,f\n");
+        }
+        if ( y - j < 0) {
+            b = 0;
+            c = 0;
+            e = 0;
+            printf("b,c,e\n");
+        }
+
+
+
+        if (g1.grille[ a * j+ x ][y + a *j] != jeton ){  // on compare le dernier jeton jouer avec celui en bas a droite
+            a = 0;
+        }
+        printf("%d=a\n",a);
+
+        if (g1.grille[x- b *j][y- b * j] != jeton ){  // on compare le dernier jeton jouer avec celui en haut a gauche
+            b = 0;
+        }
+        printf("%d=b\n",b);
+
+        if (g1.grille[x+ c * j][y- c * j] != jeton ){ // on compare le dernier jeton jouer avec celui en haut a droite
+            c = 0;
+        }
+        printf("%d=c\n",c);
+
+        if (g1.grille[x- d * j][y+d * j] != jeton ){ // on compare le dernier jeton jouer avec celui en bas a gauche
+            d = 0;
+        }
+        printf("%d=d\n",d);
+
+        if (g1.grille[x][y- e * j] != jeton ){ // on compare le dernier jeton jouer avec celui a sa gauche
+            e = 0;
+        }
+        printf("%d=e\n",e);
+        if (g1.grille[x][y+ f * j] != jeton ){ // on compare le dernier jeton jouer avec celui a sa droite
+            f = 0;
+        }
+        printf("%d=f\n",f);
+
+        if (g1.grille[x + j * g][y] != jeton ){// on compare le dernier jeton jouer avec celui au dessous
+            g = 0;
+        }
+        printf("%d=g\n",g);
+
+
+
         compteur_diagonaled += b + a; // compteur de jeton aligner dans la premiere diagonale
+        printf("diagonaled = %d\n",compteur_diagonaled);
         compteur_diagonaleg += c + d; // compteur de jeton aligner dans la deuxieme diagonale
-        compteur_ligne += g + h;      // compteur de jeton aligner sur une ligne
-        compteur_colone += e + f;     // compteur de jeton aligner sur une colone
+        printf("diagonaleg = %d\n",compteur_diagonaleg);
+        compteur_ligne += e + f ;      // compteur de jeton aligner sur une ligne
+        printf("ligne = %d\n",compteur_ligne);
+        compteur_colonne += g ;     // compteur de jeton aligner sur une colone
+        printf("colonne = %d\n\n",compteur_colonne);
 
 
-        l = a + b + c + d + e + f + g + h;
-
-        if (compteur_ligne == n || compteur_colone == n || compteur_diagonaled== n || compteur_diagonaleg == n){
-            l =0;
+        if (compteur_ligne == g1.largeur - 2 ||  compteur_colonne == g1.largeur - 2 || compteur_diagonaled == g1.largeur - 2 || compteur_diagonaleg == g1.largeur - 2) {
+            if (jeton == 'O') {
+                printf("joueur 1 gagne bravo\n");
+                return 0;
+            } else {
+                printf("joueur 2 gagne bravo\n");
+                return 1;
+            }
         }
+
+        l = a + b + c + d + e + f + g ;
+
 
     }while ( l != 0 );
+    printf("%d\n",jeton);
 
 
 
-    if (compteur_ligne== n ||  compteur_colone== n || compteur_diagonaled== n || compteur_diagonaleg == n){
-        if (g1.grille[x][y] == 'O') {
-            printf("joueur 1 gagne bravo\n");
-            return 0;
-        }else {
-            printf("joueur 2 gagne bravo\n");
-            return 1;
-        }
-    }  else if (y==0) { //regarde si il y a egalite
+    if (x==0) { //regarde si il y a egalite
+
         do {
             if (g1.grille[compteur_egalite][0] != '_') {
                 compteur_egalite++;
             }
 
         } while (g1.grille[compteur_egalite][0] != '_');
-        if (compteur_egalite == n + 2) {
+
+        if (compteur_egalite == g1.largeur -1) {
             printf("egalite\n");
             return 2;
         }
-    }else {
-        return -1;
     }
+
+
+    return -1;
+
 
 
 }
