@@ -103,7 +103,7 @@ int main () {
                     do {
                         printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
                         scanf("%d",&colonne);
-                    } while (add_token_bis(g1,jeton,colonne,&x)==0);
+                    } while (add_token_bis(g1,jeton,colonne)==0);
                     break;
 
                 case 2:
