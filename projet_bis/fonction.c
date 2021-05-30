@@ -161,7 +161,7 @@ int option_choice(){
     return choice;
 
 }
-int add_token_bis(Grid g1,char jeton, int colonne,int *x){
+int add_token_bis(Grid g1,char jeton, int colonne){
     int i = 0;
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
@@ -175,10 +175,8 @@ int add_token_bis(Grid g1,char jeton, int colonne,int *x){
     }
     if (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X'){
         g1.grille[i][colonne-1]=jeton;
-        *x=i-1;
     }
-    else{g1.grille[i-1][colonne-1]=jeton;}			//on ajoute un pion a la case dessus
-        *x=i+1;
+    else{g1.grille[i-1][colonne-1]=jeton;}			//on ajoute un pion a la case dessus 
     return 1;
 }
 int remove_token(Grid g1,char jeton, int colonne){
