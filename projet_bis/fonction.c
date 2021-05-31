@@ -206,3 +206,33 @@ int remove_token(Grid g1,char jeton, int colonne){
 
     return 1;
 }
+void IA (Grid g1,char jeton){
+    int a, b;
+    a = rand()%10 + 1;
+    b = rand()%g1.largeur+1;
+    /*if (check_equality == 0){
+      a = 1;
+      }
+    */
+    printf("b1 = %d\n",b);
+    if (a!=1){
+        do {
+            b++;
+            if (b>g1.largeur){
+                b=1;
+            }
+            printf("b = %d\n",b);
+
+        } while (add_token_bis(g1,jeton, b) == 0);
+
+    } else {
+        do {
+            b++;
+            if (b>g1.largeur){
+                b=1;
+            }
+
+        } while (remove_token(g1, jeton, b) == 0);
+    }
+
+}
