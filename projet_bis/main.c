@@ -106,7 +106,8 @@ int main () {
                 player=2;
             }
             if (ia%2 == 1){
-                IA(g1,jeton);
+                colonne =IA(g1,jeton);
+                printf("Ia joue en %d\n",colonne);
             }else {
                 printf("Joueur %d a vous !\n", player);
                 //show_grid(g1);
