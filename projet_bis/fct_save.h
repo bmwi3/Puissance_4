@@ -9,6 +9,6 @@
 
 
 
-int save(FILE*fptr, Grid g1,int i);
-int load(FILE*fptr,Grid g1);
+int save(FILE*fptr, Grid g1,int i,char *joueur1,char *joueur2);
+int load(FILE*fptr,Grid *g1,int *colonne,char *joueur1,char *joueur2);
 #endif //PROJET_BIS_FCT_SAVE_H
