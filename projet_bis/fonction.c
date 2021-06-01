@@ -206,7 +206,7 @@ int remove_token(Grid g1,char jeton, int colonne){
 
     return 1;
 }
-void IA (Grid g1,char jeton){
+int IA (Grid g1,char jeton){
     int a, b;
     a = rand()%10 + 1;
     b = rand()%g1.largeur+1;
@@ -234,5 +234,6 @@ void IA (Grid g1,char jeton){
 
         } while (remove_token(g1, jeton, b) == 0);
     }
+    return b;
 
 }
