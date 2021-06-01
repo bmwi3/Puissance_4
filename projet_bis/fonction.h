@@ -19,7 +19,7 @@ int check_winner(Grid g1,int colonne, char jeton);
 int option_choice();
 int add_token_bis(Grid g1,char jeton,int colonne);
 int remove_token(Grid g1,char jeton, int colonne);
-void IA (Grid g1,char jeton);
+int IA (Grid g1,char jeton);
 
 
 #endif //PROJET_BIS_FONCTION_H
