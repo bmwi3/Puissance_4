@@ -9,7 +9,8 @@
 
 
 
-int save(FILE*fptr, Grid g1,int i,char *joueur1,char *joueur2) {
+int save(Grid g1,int i,char *joueur1,char *joueur2) {
+    FILE*fptr;
     char array[( g1.largeur - 1)];
     fptr = fopen("save.txt", "w");
     if (fptr == NULL) {
