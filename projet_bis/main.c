@@ -12,6 +12,10 @@ int main () {
     logo();
     printf("Bienvenue au puissance N \n");
     int replay=0;
+    char joueur1[26], joueur2[26];
+    int nbcolonne;
+    char jeton;
+    int player=rand()%2+1;
     
     do {
         
@@ -47,12 +51,12 @@ int main () {
                      printf("Impossible, choisir n entre 3 et 20\n");
                   }
              } while (n < 3 || n > 20 );
-
+             g1.largeur = g1.hauteur = nbcolonne = n+2;
 
              break;
 
          case 2:
-               load(fptr,g1);
+               load(fptr,&g1,&nbcolonne,joueur1,joueur2);
                printf("partie charge\n");
                return 0;
                break;
@@ -62,15 +66,9 @@ int main () {
          default:
             {}
      }
-      g1.largeur = n+2;
-      g1.hauteur = n+2;
+        if (start == 1){
+         initialise(&g1);
 
-        initialise(&g1);
-
-
-
-         char jeton,joueur1[26], joueur2[26];
-          int player=rand()%2+1;
 
 
          if (nombre_de_joueur == 2){
@@ -85,15 +83,18 @@ int main () {
              ia = 1;
          }
          if (player == 1){
-              printf("%s vous etes le joueur 1\n",joueur1);
-              printf("%s vous etes le joueur 2\n",joueur2);
-            ia = 0;
+             printf("%s vous etes le joueur 1\n",joueur1);
+             printf("%s vous etes le joueur 2\n",joueur2);
+             ia = 0;
          } else{
-            printf("%s vous etes le joueur 1\n",joueur2);
-            printf("%s vous etes le joueur 2\n",joueur1);
+             printf("%s vous etes le joueur 1\n",joueur2);
+             printf("%s vous etes le joueur 2\n",joueur1);
          }
 
-        /*printf("joueur %d a vous de commencez\n",player);*/
+         /*printf("joueur %d a vous de commencez\n",player);*/
+
+     }
+
 
         do {
 
