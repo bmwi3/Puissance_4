@@ -131,7 +131,7 @@ int main () {
                         break;
 
                     case 3:
-                        if (save(fptr, g1, i) == 1) {
+                        if (save(g1, i,joueur1,joueur2) == 1) {
                             printf("sauvegarde reussi");
                             return 0;
                         } else {
