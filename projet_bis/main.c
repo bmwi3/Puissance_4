@@ -58,7 +58,7 @@ int main () {
          case 2:
                load(fptr,&g1,&nbcolonne,joueur1,joueur2);
                printf("partie charge\n");
-               return 0;
+             
                break;
 
             case 3:
