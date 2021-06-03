@@ -5,6 +5,7 @@
 #include "fct_save.h"
 #include <stdio.h>
 #include "fonction.h"
+#include "grid.h"
 #include <string.h>
 
 
