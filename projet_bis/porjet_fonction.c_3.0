@@ -381,7 +381,7 @@ int IA (Grid g1,char jeton){
     b = rand()%g1.largeur+1;
     
     if (check_ligne_bas_pleine(g1)== 1){
-      a = 1;
+      a = 2;
     }
     
    // printf("b1 = %d\n",b);
