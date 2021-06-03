@@ -167,7 +167,7 @@ int add_token_bis(Grid g1,char jeton, int colonne){
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
     }
-    if (g1.grille[0][colonne-1] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+    if (g1.grille[0][colonne-1] != '_') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
         return 0;
     }
     while ( (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X') && i<g1.largeur-1 )	//tant que l'on n'a pas une case vide on descent
@@ -185,7 +185,7 @@ int remove_token(Grid g1,char jeton, int colonne){
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;                               //
     }
-    if (g1.grille[0][colonne-1] != ' ') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+    if (g1.grille[0][colonne-1] != '_') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
         return 0;
     }
 
@@ -197,7 +197,7 @@ int remove_token(Grid g1,char jeton, int colonne){
         printf("Vous ne pouvez pas retirer votre propore jeton\n");
         return 0;
     }
-    if(i==g1.largeur || g1.grille[i][colonne-1]==' '){
+    if(i==g1.largeur || g1.grille[i][colonne-1]=='_'){
         printf("Il n'y a rien à retirer\n");
         return 0;
     }
