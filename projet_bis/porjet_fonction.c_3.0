@@ -379,11 +379,12 @@ int IA (Grid g1,char jeton){
     int a, b;
     a = rand()%10 + 1;
     b = rand()%g1.largeur+1;
-    /*if (check_equality == 0){
+    
+    if (check_ligne_bas_pleine(g1)== 1){
       a = 1;
-      }
-    */
-    printf("b1 = %d\n",b);
+    }
+    
+   // printf("b1 = %d\n",b);
     if (a!=1){
         do {
             b++;
