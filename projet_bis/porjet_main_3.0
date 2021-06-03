@@ -39,7 +39,7 @@ int main () {
                    }
                 }while ((nombre_de_joueur != 1 ) && (nombre_de_joueur != 2));
 
-             printf("choisir n le nombre de jeton à aligner, choix de n entre 3 et 20\n");
+             printf("choisir n le nombre de jeton a aligner, choix de n entre 3 et 20\n");
              do{
                   scanf("%d",&n);
                  if (n < 3 || n > 20) {
