@@ -5,6 +5,7 @@
 #include <time.h>
 #include "fonction.h"
 #include "fct_save.h"
+#include "grid.h"
 
 int main () {
     FILE*fptr;
