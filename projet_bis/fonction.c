@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include "fonction.h"
 #include <string.h>
+#include <stdlib.h>
 
 void logo(void) {
     printf(" ____                                                          \n");
@@ -12,7 +13,7 @@ void logo(void) {
     printf("|         .   ___    ___   ___    ___    ___   ___    |   |   |\n");
     printf("|  |   |  |  |___   |___  |___|  |   |  |     |___    |     | |\n");
     printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |\n");
-};
+}
 
 
 
