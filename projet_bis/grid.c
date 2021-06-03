@@ -15,7 +15,7 @@ void initialise(Grid *g1){
     for (int i=0;i<g1->largeur;i++){
         g1->grille[i]=(char*) malloc(sizeof (char) * g1->hauteur); //de meme on lui implémente une hauteur
         for (int j=0;j<g1->hauteur;j++){
-            g1->grille[i][j] = ' '; //pour toute valeur du tableau, on initialise a "_"
+            g1->grille[i][j] = '_'; //pour toute valeur du tableau, on initialise a "_"
         }
     }
 }
