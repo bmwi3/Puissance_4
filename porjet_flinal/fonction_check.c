@@ -1,3 +1,7 @@
+#include "fonction_check.h"
+#include <stdio.h>
+
+
 int trouver_x (Grid g1, int colonne, char jeton ){
     int x = 0, y = colonne - 1;
 
