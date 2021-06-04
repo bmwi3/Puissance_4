@@ -77,7 +77,7 @@ int IA (Grid g1,char jeton){
     a = rand()%10 + 1;
     b = rand()%g1.largeur+1;
 
-    if (check_ligne_bas_pleine(g1)== 1){
+    if (check_ligne_bas_vide(g1)== 1){
         a = 2;
     }
 
