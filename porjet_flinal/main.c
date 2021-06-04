@@ -169,7 +169,7 @@ int main () {
         } while(check_winner(g1,colonne, jeton) == -1 && check_grille_pleine(g1,colonne,jeton) == -1);
 
 
-        printf("Voulez-vous recommencer?1.oui 2.non\n");
+        printf("Voulez-vous recommencer?\n   1.oui \n   2.non\n");
         scanf("%d",&replay);
 
     } while(replay==1);
