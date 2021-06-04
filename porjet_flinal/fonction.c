@@ -19,7 +19,7 @@ int option_choice(Grid g1){
         printf("Voulez vous :\n 1.Ajouter un jeton\n 2.Enlever un jeton\n 3.Sauvegarder et quitter\n");
         scanf("%d",&choice);
         if (choice==2){
-            if (check_ligne_bas_pleine(g1)==1){
+            if (check_ligne_bas_vide(g1)==1){
                 choice = 0;
                 printf("impossible d'enlever un jeton la grille est vide\n");
             }
