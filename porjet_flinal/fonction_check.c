@@ -168,18 +168,18 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
     return -1;
 }
 
-int check_ligne_bas_vide(Grid g1){
+int check_ligne_bas_vide(Grid g1){                                  // cettefonction sert pour vérifier que la grille comptien au moins 1 jeton avant d'en enlever un
 
     int compteur_egalite=0;
 
-    do {
-        if (g1.grille[g1.largeur-1][compteur_egalite] == ' ') {
+    do {                                                            // compte le nombre de case vide dans la ligne du bas
+        if (g1.grille[g1.largeur-1][compteur_egalite] == ' ') {     // vérifie si la case est vide
             compteur_egalite++;
         }
 
     } while (g1.grille[g1.largeur-1][compteur_egalite] == ' ');
 
-    if (compteur_egalite == g1.largeur) {
+    if (compteur_egalite == g1.largeur) {                           // regarde si la ligne est vide
         return 1;
     } else{
         return 0;
