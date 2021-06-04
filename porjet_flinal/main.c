@@ -20,7 +20,7 @@ int main () {
         Grid g1;
         int i=0, ia=0;
 
-        printf("Nouvelle partie : 1 \nPartie charge : 2 \nQuitter : 0\n");
+        printf("Nouvelle partie : 1 \nCharger un partie : 2 \nQuitter : 0\n");
 
         do {
         scanf("%d", &start);
