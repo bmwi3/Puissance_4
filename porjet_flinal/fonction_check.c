@@ -16,13 +16,13 @@ int check_colonne (Grid g1, int colonne, char jeton, int x){
         if (x+j > g1.largeur-1){
 
             c = 0;
-            //printf("a,c,g\n");
+            
         }else if (g1.grille[x + j][y] != jeton ){// on compare le dernier jeton jouer avec celui d'en dessous
             c = 0;
         }
-        // printf("%d=g\n",c);
+       
         compteur_colonne += c ;     // compteur de jeton aligner sur une colone
-        //printf("colonne = %d\n\n",compteur_colonne);
+        
 
     } while (c != 0 && compteur_colonne != g1.largeur-2);
 
@@ -120,10 +120,15 @@ int  check_winner(Grid g1, int colonne,char jeton) {
 
     if (check_ligne (g1,colonne,jeton,x) == g1.largeur - 2 ||  check_colonne (g1, colonne, jeton, x) == g1.largeur - 2 || check_diagonaled (g1, colonne, jeton, x) == g1.largeur - 2 || check_diagonaleg (g1, colonne, jeton, x) == g1.largeur - 2) {
         if (jeton == 'O') {
-            printf("joueur 1 gagne bravo vous avez gagner\n");
+            printf(" ___     ___     ____                _____\n");
+            printf("|   \\   |   \\   |    |   \\      /   |     |     |\n");
+            printf("|___/   |___/   |----|    \\    /    |     |     |\n");
+            printf("|   \\   | \\     |    |     \\  /     |     |     |\n");
+            printf("|___/   |  \\    |    |      \\/      |_____|     o\n");
+            printf("joueur 1 gagne!!\n");
             return 0;
         } else {
-            printf("joueur 2 gagne bravo vous avez gagner\n");
+            printf("joueur 2 gagne!!\n");
             return 1;
         }
     }
