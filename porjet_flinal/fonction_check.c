@@ -1,5 +1,5 @@
-int trouver_x (Grid g1, int colonne, char jeton ){  // cette fonction sert a trouver la hateur du dernier jeton poser
-    int x = 0, y = colonne - 1; // x étant la varible de hateur et y la largeur du dernier jeton poser dans la grille
+int trouver_x (Grid g1, int colonne, char jeton ){                  // cette fonction sert a trouver la hateur du dernier jeton poser
+    int x = 0, y = colonne - 1;                                     // x étant la varible de hateur et y la largeur du dernier jeton poser dans la grille
 
     while (g1.grille[x][y]!='O' && g1.grille[x][y]!='X' && x<g1.largeur-1){ // on cherche a trouver a qu'elle hauteur a était poser le dernier jetons
         x++;
@@ -148,19 +148,19 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
 
         } while (g1.grille[0][compteur_egalite] != ' '&& compteur_egalite !=g1.largeur);            
 
-        if (compteur_egalite == g1.largeur ) {                      
+        if (compteur_egalite == g1.largeur ) {                      // on regarde si la ligne est pleine
             
             printf("grille pleine voulait vous continué ?\n1 pour continuer\n2 pour quitter\n");
-            do {
+            do {                                                    // tant que le joueur ne repond pas 1 ou 2 on redemande
                 
                 scanf("%d", &rejouer);
-                if (rejouer != 1 && rejouer != 2 ){
+                if (rejouer != 1 && rejouer != 2 ){                 
 
                     printf("Impossible, choisir 1 ou 2/n\n");
                 }
             }while (rejouer != 1 && rejouer != 2 );
             
-            if (rejouer == 2 ){
+            if (rejouer == 2 ){                                     // on voit si le joueur veut continuer comme ça ou recommencer
                 return 1;
             }
         }
@@ -168,7 +168,7 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
     return -1;
 }
 
-int check_ligne_bas_pleine(Grid g1){
+int check_ligne_bas_vide(Grid g1){
 
     int compteur_egalite=0;
 
