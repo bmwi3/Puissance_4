@@ -59,8 +59,7 @@ int main () {
          case 2:
                i=load(fptr,&g1,&nbcolonne,joueur1,joueur2);
                printf("partie charge\n");
-
-
+               printf("Ahh vous revoila %s et %s!\n",joueur1,joueur2);
                break;
 
             case 3:
