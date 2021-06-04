@@ -119,12 +119,12 @@ int  check_winner(Grid g1, int colonne,char jeton) {
 
 
     if (check_ligne (g1,colonne,jeton,x) == g1.largeur - 2 ||  check_colonne (g1, colonne, jeton, x) == g1.largeur - 2 || check_diagonaled (g1, colonne, jeton, x) == g1.largeur - 2 || check_diagonaleg (g1, colonne, jeton, x) == g1.largeur - 2) {
-        if (jeton == 'O') {
-            printf(" ___     ___     ____                _____\n");
+                    printf(" ___     ___     ____                _____\n");
             printf("|   \\   |   \\   |    |   \\      /   |     |     |\n");
             printf("|___/   |___/   |----|    \\    /    |     |     |\n");
             printf("|   \\   | \\     |    |     \\  /     |     |     |\n");
             printf("|___/   |  \\    |    |      \\/      |_____|     o\n");
+        if (jeton == 'O') {
             printf("joueur 1 gagne!!\n");
             return 0;
         } else {
