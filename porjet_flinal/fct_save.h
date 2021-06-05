@@ -22,7 +22,7 @@ int save(Grid g1,int i,char *joueur1,char *joueur2);
 * @param Gructure Grid (g1) pour pouvoir reprendre la grille de jeu
 * @param le nombre de colonne pour la taille du tableau
 * @param le nom des joueurs 1 et  2
-* @return le nombe i pour savoir a qui c'est de jouer
+* @return le nombe i pour savoir a qui c'est de jouer ou 0 si le le fichier n'existe pas
 */
 int load(FILE*fptr,Grid *g1,int *colonne,char *joueur1,char *joueur2);
 #endif //PROJET_BIS_FCT_SAVE_H
