@@ -79,6 +79,8 @@ int IA (Grid g1,char jeton){
 
     if (check_ligne_bas_vide(g1)== 1){
         a = 2;
+    } else (check_grille_pleine(g1,colonne,jeton) == 1){
+        a = 1;
     }
 
     if (a!=1){
