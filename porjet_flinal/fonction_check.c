@@ -150,7 +150,7 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
 
         if (compteur_egalite == g1.largeur ) {                      // on regarde si la ligne est pleine
             
-            printf("grille pleine voulait vous continué ?\n1 pour continuer\n2 pour quitter\n");
+          /*  printf("grille pleine voulait vous continué ?\n1 pour continuer\n2 pour quitter\n");
             do {                                                    // tant que le joueur ne repond pas 1 ou 2 on redemande
                 
                 scanf("%d", &rejouer);
@@ -160,7 +160,7 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
                 }
             }while (rejouer != 1 && rejouer != 2 );
             
-            if (rejouer == 2 ){                                     // on voit si le joueur veut continuer comme ça ou recommencer
+            if (rejouer == 2 ){      */                               // on voit si le joueur veut continuer comme ça ou recommencer
                 return 1;
             }
         }
