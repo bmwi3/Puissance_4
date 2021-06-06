@@ -166,7 +166,9 @@ int main () {
 
         printf("Voulez-vous recommencer?\n\t1.oui\n\t2.non\n"); //on propose a l'utilisateur de rejouer ou quitter
         scanf("%d",&replay);
-
+        
+        free(g1.grille);
+        
     } while(replay==1);
     return 0;
 
