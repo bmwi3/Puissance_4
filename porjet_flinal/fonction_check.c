@@ -168,7 +168,7 @@ int check_grille_pleine (Grid g1,int colonne,char jeton){           // cette fon
     return -1;
 }
 
-int check_ligne_bas_vide(Grid g1){                                  // cettefonction sert pour vérifier que la grille comptien au moins 1 jeton avant d'en enlever un
+int check_ligne_bas_vide(Grid g1){                                  // cettefonction sert pour vérifier que la grille contient au moins 1 jeton avant d'en enlever un
 
     int compteur_egalite=0;
 
