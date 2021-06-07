@@ -7,7 +7,7 @@
 #include "fct_save.h"
 void initialise(Grid *g1){
 
-    g1->grille = (char**) malloc(sizeof (char*) * g1->largeur); //on impémente une largeur a notre tableau de charactère g1
+    g1->grille = (char**) malloc(sizeof (char*) * g1->largeur); //on impémente une largeur a notre tableau de caractère g1
     for (int i=0;i<g1->largeur;i++){
         g1->grille[i]=(char*) malloc(sizeof (char) * g1->hauteur);  //de meme on lui implémente une hauteur
         for (int j=0;j<g1->hauteur;j++){
@@ -24,7 +24,7 @@ void show_grid(Grid g1){
     printf("\n");
     for (int i=0;i<g1.largeur;i++){
         for (int j=0;j<g1.hauteur;j++){
-            printf("{%c}",g1.grille[i][j]);//on affiche pour chaque case du tableau le charactère qu'elle contiens
+            printf("{%c}",g1.grille[i][j]);//on affiche pour chaque case du tableau le caractère qu'elle contiens
 
         }
         printf("\n");
