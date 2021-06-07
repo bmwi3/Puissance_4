@@ -13,7 +13,7 @@ int save(Grid g1,int i,char *joueur1,char *joueur2) { //sauvegarde la partie
     char tab[( g1.largeur - 1)];                     // on declare un tableau
     fptr = fopen("save.txt", "w");                      // on ouvre le fichier en mode ecriture
     if (fptr == NULL) {                                 //on affiche un message d'erreur si on rencontre un probleme lors de la sauvegarde
-        printf(" File named save.txt does not exist or cannot be opened.\n");   //message d'erreur si problème
+        printf(" Le fichier de sauvegarde n'a pas plu etre ouvert\n");   //message d'erreur si problème
         return 0;// on retourne 0 si il y a eu un problème
     } else {
 
