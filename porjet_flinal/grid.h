@@ -11,16 +11,14 @@ typedef struct{
 }Grid;
 
 /**
-* affiche une grille avec les charactère qu'elle contiens
+* affiche une grille avec les caractère qu'elle contiens
 * @param structure Grid qui contiens une matrice carré ainsi que ses dimentions 
-* @return rien
 */
 void show_grid(Grid g1);
 
 /**
 * initialise toute les case d'une grille avec le caractere '_'
 * @param structure Grid passé par adresse 
-* @return rien
 */
 void initialise(Grid *g1);
 
