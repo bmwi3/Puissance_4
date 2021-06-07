@@ -25,7 +25,6 @@ void show_grid(Grid g1){
     for (int i=0;i<g1.largeur;i++){
         for (int j=0;j<g1.hauteur;j++){
             printf("{%c}",g1.grille[i][j]);//on affiche pour chaque case du tableau le caractère qu'elle contiens
-
         }
         printf("\n");
     }
