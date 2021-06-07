@@ -10,7 +10,7 @@
 
 int save(Grid g1,int i,char *joueur1,char *joueur2) { //sauvegarde la partie
     FILE*fptr;                                        // pointeur sur le fichier
-    char array[( g1.largeur - 1)];                     // on declare un tableau
+    char tab[( g1.largeur - 1)];                     // on declare un tableau
     fptr = fopen("save.txt", "w");                      // on ouvre le fichier en mode ecriture
     if (fptr == NULL) {                                 //on affiche un message d'erreur si on rencontre un probleme lors de la sauvegarde
         printf(" File named save.txt does not exist or cannot be opened.\n");   //message d'erreur si problème
@@ -22,9 +22,9 @@ int save(Grid g1,int i,char *joueur1,char *joueur2) { //sauvegarde la partie
     }
     for (int i = 0; i < g1.largeur; i++)//on ecrit dans le fichier save.txt les valeur du tableau ligne par ligne
     {
-        strcpy(array, g1.grille[i]); //on copie la ligne i de notre grille dans notre tableau 
+        strcpy(tab, g1.grille[i]); //on copie la ligne i de notre grille dans notre tableau 
 
-        fputs(array, fptr); //on enregistre sur le fichier la premiere ligne qui est notre chaine de caractère a l'aide de fput
+        fputs(tab, fptr); //on enregistre sur le fichier la premiere ligne qui est notre chaine de caractère a l'aide de fput
         fputs("\n", fptr);//on saute une ligne pour respecter la mise en forme du tableau, pour aider à recuperer les infos
     }
     fclose(fptr); //on ferme le fichier pour eviter les erreurs
