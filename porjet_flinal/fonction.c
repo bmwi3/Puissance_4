@@ -34,20 +34,20 @@ int add_token_bis(Grid g1,char jeton, int colonne){
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;
     }
-    if (g1.grille[0][colonne-1] != '_') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
+    if (g1.grille[0][colonne-1] != '_') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvoie 0)
         return 0;
     }
     i= trouver_x(g1,colonne,jeton);
-    if (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X'){
-        g1.grille[i][colonne-1]=jeton;
+    if (g1.grille[i][colonne-1] != 'O'&& g1.grille[i][colonne-1] != 'X'){ //si la case est vide on y ajoute le jeton
+        g1.grille[i][colonne-1]=jeton; //la grille prend le jeton
     }
     else{g1.grille[i-1][colonne-1]=jeton;}			//on ajoute un pion a la case dessus
     return 1;
 }
-int remove_token(Grid g1,char jeton, int colonne){
+int remove_token(Grid g1,char jeton, int colonne){//fonction qui enlève un jeton
     int i = 0;
     if (colonne-1 < 0 || colonne-1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
-        return 0;                               //
+        return 0;                               //on retourne 0
     }
     if (g1.grille[0][colonne-1] != '_') {        // si la colonne est pleine, on ne fait rien on a rien fait (renvois 0)
         return 0;
@@ -57,33 +57,33 @@ int remove_token(Grid g1,char jeton, int colonne){
     {                                                   //penser que la condition ne fonctionne que si il y a une ligne pleine en dessous
         i++;
     }
-    if(g1.grille[i][colonne-1]==jeton){
-        printf("Vous ne pouvez pas retirer votre propore jeton\n");
+    if(g1.grille[i][colonne-1]==jeton){//si la case contient le même jeton que celui du joueur impossible de le retirer
+        printf("Vous ne pouvez pas retirer votre propore jeton\n"); //message d'erreur
         return 0;
     }
-    if(i==g1.largeur || g1.grille[i][colonne-1]=='_'){
+    if(i==g1.largeur || g1.grille[i][colonne-1]=='_'){//on verifie si la grille est vide
         return 0;
     }
-    if (g1.grille[i][colonne-1] != '_'&& g1.grille[i][colonne-1] != jeton){
-        g1.grille[i][colonne-1]='_';
+    if (g1.grille[i][colonne-1] != '_'&& g1.grille[i][colonne-1] != jeton){//si la case est remplie du jeton adverse
+        g1.grille[i][colonne-1]='_';//on remplace le jeton adverse par le vide.
     }
 
-    return 1;
+    return 1;//retourne 1 si la fonction c'est bien passée
 }
 
 
-int IA (Grid g1,char jeton){
-    int a, b;
-    a = rand()%10 + 1;
+int IA (Grid g1,char jeton){        //fonction basée sur l'aléa qui permet de jouer en 1vs ordi
+    int a, b;           //le a permet de savoir si on ajoute ou enleve le jeton
+    a = rand()%10 + 1;          // a et b s'initialisent aléatoirement
     b = rand()%g1.largeur+1;
 
-    if (check_ligne_bas_vide(g1)== 1){
+    if (check_ligne_bas_vide(g1)== 1){      //on vérifie si la ligne est pleine
         a = 2;
-    } else (check_grille_pleine(g1,colonne,jeton) == 1){
+    } else (check_grille_pleine(g1,colonne,jeton) == 1){  //on vérifie si la grille est pleine
         a = 1;
     }
 
-    if (a!=1){
+    if (a!=1){ // si a est différent de 1
         do {
             b++;
             if (b>g1.largeur){
@@ -91,7 +91,7 @@ int IA (Grid g1,char jeton){
             }
             printf("b = %d\n",b);
 
-        } while (add_token_bis(g1,jeton, b) == 0);
+        } while (add_token_bis(g1,jeton, b) == 0);  //on ajoute un jeton 
 
     } else {
         do {
