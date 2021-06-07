@@ -5,7 +5,7 @@
 #include "fonction.h"
 #include <stdlib.h>
 
-void logo(void) {
+void logo(void) {                       //affiche notre "logo"
     printf(" ____\n");
     printf("|    |                                                |       |\n");
     printf("|____|                                                | \\     |\n");
@@ -13,19 +13,19 @@ void logo(void) {
     printf("|  |   |  |  |___   |___  |___|  |   |  |     |___    |     \\ |\n");
     printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |\n");
 
-int option_choice(Grid g1){
+int option_choice(Grid g1){     //présente les différentes options au joueur
     int choice=0;
-    do {
+    do {        //tant que l'utilisateur ne rentre pas un nombre autorise on présente les choix
         printf("Voulez vous :\n 1.Ajouter un jeton\n 2.Enlever un jeton\n 3.Sauvegarder et quitter\n");
-        scanf("%d",&choice);
-        if (choice==2){
-            if (check_ligne_bas_vide(g1)==1){
-                choice = 0;
-                printf("impossible d'enlever un jeton la grille est vide\n");
+        scanf("%d",&choice); //on récupère le choix
+        if (choice==2){     //si on choisit de retirer un jeton on vérifie que la grille ne soit pas vide
+            if (check_ligne_bas_vide(g1)==1){//si la grille est vide on ne peux pas retirer de jeton
+                choice = 0;     //choix prend 0 pour ne pas remplir les conditions de passage
+                printf("impossible d'enlever un jeton la grille est vide\n"); //message d'erreur
             }
         }
     } while(choice!=1 && choice!=2 && choice!=3);
-    return choice;
+    return choice;                  //on retourne la valeur de choice pour le switch dans le main
 
 }
 
@@ -84,17 +84,15 @@ int IA (Grid g1,char jeton){        //fonction basée sur l'aléa qui permet de 
     }
 
     if (a!=1){ // si a est différent de 1
-        do {
+        do {        //on ajoute un jeton aléatoire tant que la fonction add-token n'autorise pas
             b++;
             if (b>g1.largeur){
                 b=1;
             }
-            printf("b = %d\n",b);
-
-        } while (add_token_bis(g1,jeton, b) == 0);  //on ajoute un jeton 
+        } while (add_token_bis(g1,jeton, b) == 0);  
 
     } else {
-        do {
+        do {        //on retire un jeton aléatoire tant que la fonction add-token n'autorise pas
             b++;
             if (b>g1.largeur){
                 b=1;
