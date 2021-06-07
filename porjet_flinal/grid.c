@@ -3,8 +3,8 @@
 //
 #include <stdio.h>
 #include <stdlib.h>
-#include "fonction.h"
-#include "fct_save.h"
+#include "grid.h"
+
 void initialise(Grid *g1){
 
     g1->grille = (char**) malloc(sizeof (char*) * g1->largeur); //on impémente une largeur a notre tableau de caractère g1
