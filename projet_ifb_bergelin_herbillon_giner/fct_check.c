@@ -186,7 +186,7 @@ int check_egalite (Grid g1){
     int rejouer;
 
     if (check_grille_pleine(g1) == 1) {
-        printf("la grille pleine voulait vous continuer ?\n1 pour continuer\n2 pour quitter\n");
+        printf("la grille pleine voulez vous continuer ?\n\t1 pour continuer\n\t2 pour quitter\n");
         do {
             scanf("%d", &rejouer);
             if (rejouer != 1 && rejouer != 2 ){
