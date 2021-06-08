@@ -7,7 +7,7 @@
 #include "fct_check.h"
 
 int add_token_bis(Grid g1, char jeton, int colonne) {
-      //variable pour la hauteur du dernier jeton posé
+     
     if (colonne - 1 < 0 || colonne - 1 > g1.largeur) {     // si la bonne colonne n'appartient pas au tableau
         return 0;
     }
