@@ -3,8 +3,7 @@
 //
 
 #include "fct_save.h"
-#include <stdio.h>
-#include <string.h>
+
 
 
 
