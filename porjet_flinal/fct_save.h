@@ -4,6 +4,7 @@
 #include "fonction.h"
 #include "grid.h"
 #include <stdio.h>
+#include <string.h>
 #ifndef PROJET_BIS_FCT_SAVE_H
 #define PROJET_BIS_FCT_SAVE_H
 
