@@ -8,6 +8,6 @@
 #include "fct_check.h"
 
 void logo(void);
-int option_choice(Grid g1,int colonne);
+int option_choice(Grid g1);
 
 #endif //PROJET_IFB_BERGELIN_HERBILLON_GINER_AFFICHAGE_H
