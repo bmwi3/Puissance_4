@@ -1,0 +1,25 @@
+//
+// Created by julie on 08/06/2021.
+//
+
+#ifndef PROJET_IFB_BERGELIN_HERBILLON_GINER_GRID_H
+#define PROJET_IFB_BERGELIN_HERBILLON_GINER_GRID_H
+typedef struct{
+    int hauteur;
+    int largeur;
+    char **grille;
+}Grid;
+
+/**
+* affiche une grille avec les caractère qu'elle contiens
+* @param structure Grid qui contiens une matrice carré ainsi que ses dimentions
+*/
+void show_grid(Grid g1);
+
+/**
+* initialise toute les case d'une grille avec le caractere '_'
+* @param structure Grid passé par adresse
+*/
+void initialise(Grid *g1);
+
+#endif //PROJET_IFB_BERGELIN_HERBILLON_GINER_GRID_H
