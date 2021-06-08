@@ -19,9 +19,9 @@ int save(Grid g1,int i,char *joueur1,char *joueur2)
         fprintf(fptr, "%d %d\n",i,g1.hauteur);  //on ecrit dans le fichier save.txt la valeur de i, de la taille du tableau et les noms des deux joueurs
         fprintf(fptr,"%s %s\n",joueur1,joueur2);
     }
-    for (int i = 0; i < g1.largeur; i++)    //on ecrit dans le fichier save.txt les valeur du tableau ligne par ligne
+    for (int k = 0; k < g1.largeur; k++)    //on ecrit dans le fichier save.txt les valeur du tableau ligne par ligne
     {
-        strcpy(tab, g1.grille[i]);  //on copie la ligne i de notre grille dans notre tableau 
+        strcpy(tab, g1.grille[k]);  //on copie la ligne i de notre grille dans notre tableau 
 
         fputs(tab, fptr);   //on enregistre sur le fichier la premiere ligne qui est notre chaine de caractère a l'aide de fput
         fputs("\n", fptr);
