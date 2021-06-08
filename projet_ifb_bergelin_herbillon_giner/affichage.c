@@ -25,7 +25,7 @@ int option_choice(Grid g1) {
             }
         }
         if (choice == 1) {     //si on choisit de retirer un jeton on vérifie que la grille ne soit pas vide
-            if (check_grille_pleine(g1,colonne) == 1) {//si la grille est vide on ne peux pas retirer de jeton
+            if (check_grille_pleine(g1) == 1) {//si la grille est vide on ne peux pas retirer de jeton
                 choice = 0;     //choix prend 0 pour ne pas remplir les conditions de passage
                 printf("impossible d'ajouter un jeton la grille est pleine\n");
             }
