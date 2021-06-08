@@ -148,9 +148,7 @@ int  check_winner(Grid g1, int colonne,char jeton,char *joueur1, char *joueur2) 
 
 int check_grille_pleine (Grid g1,int colonne){
     int compteur_egalite = 0;
-    int x = trouver_x ( g1, colonne);
-
-    if (x==0) {                                                     // regarde si le dernier jeton est dans la ligne du haut
+                                                         // regarde si le dernier jeton est dans la ligne du haut
         do {                                                        // on compte le nombre de jeton qu'il y a dans la ligne du haut
             if (g1.grille[0][compteur_egalite] != '_') {            // à chaque fois qu'une case de la ligne du haut n'est pas vide on incrémente
                 compteur_egalite++;
@@ -161,7 +159,7 @@ int check_grille_pleine (Grid g1,int colonne){
         if (compteur_egalite == g1.largeur ) {                      // on regarde si la ligne est pleine
             return 1;
         }
-    }
+    
 
     return -1;
 }
