@@ -85,7 +85,7 @@ int main () {
 
          case 2:    //si l'utilisateur souhaite chargé une partie
                
-             i=load(fptr,&g1,&nbcolonne,joueur1,joueur2); //on charge tous les elements d'un fichier avec la fonction load et on donne a i la nouvelle valeur que retourne load pour savoir a qui c'est de jouer
+             i=load(fptr,&g1,nbcolonne,joueur1,joueur2); //on charge tous les elements d'un fichier avec la fonction load et on donne a i la nouvelle valeur que retourne load pour savoir a qui c'est de jouer
                
              printf("partie charge\n");
              printf("Ahh vous revoila %s et %s!\n",joueur1,joueur2);
