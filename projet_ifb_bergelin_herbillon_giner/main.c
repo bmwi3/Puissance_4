@@ -120,7 +120,7 @@ int main () {
 
 
 
-                switch (option_choice(g1,colonne)) {    //avec la fonction otion_choice le joueur don c'est le tour choisi entre ajouter un jeton, en retirer un ou sauvegarder et quitter
+                switch (option_choice(g1)) {    //avec la fonction otion_choice le joueur don c'est le tour choisi entre ajouter un jeton, en retirer un ou sauvegarder et quitter
                     case 1: //si le joueur choisi d'ajouter un jeton
                         do {
                             printf("Dans quelles colonnes voulez-vous placer votre jeton?\n");
@@ -158,7 +158,7 @@ int main () {
                 ia++;
             }
 
-        } while((check_winner(g1,colonne, jeton, joueur1,joueur2) == -1) && (check_egalite(g1,colonne)==-1));  //on appelle check_winner pour savoir si quelqu'un a gagné
+        } while((check_winner(g1,colonne, jeton, joueur1,joueur2) == -1) && (check_egalite(g1)==-1));  //on appelle check_winner pour savoir si quelqu'un a gagné
 
 
         printf("Voulez-vous recommencer?\n\t1.oui\n\t2.non\n"); //on propose a l'utilisateur de rejouer ou quitter
