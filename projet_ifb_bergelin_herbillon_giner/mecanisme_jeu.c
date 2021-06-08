@@ -45,14 +45,14 @@ int remove_token(Grid g1, char jeton, int colonne) {//fonction qui enlève un je
 
 
 
-int IA(Grid g1, char jeton, char colonne){        //fonction basée sur l'aléa qui permet de jouer en 1vs ordi
+int IA(Grid g1, char jeton){        //fonction basée sur l'aléa qui permet de jouer en 1vs ordi
     int a, b;           //le a permet de savoir si on ajoute ou enleve le jeton
     a = rand() % 10 + 1;          // a et b s'initialisent aléatoirement
     b = rand() % g1.largeur + 1;
 
     if (check_ligne_bas_vide(g1) == 1) {      //on vérifie si la ligne est vide
         a = 3;
-    } else if (check_grille_pleine(g1, colonne) == 1) {  //on vérifie si la grille est pleine
+    } else if (check_grille_pleine(g1) == 1) {  //on vérifie si la grille est pleine
         a = 1;
     }
 
