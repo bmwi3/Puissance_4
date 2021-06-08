@@ -1,7 +1,6 @@
 //
 // Created by julien on 29/05/2021.
 //
-#include "fonction.h"
 #include "grid.h"
 #include <stdio.h>
 #include <string.h>
