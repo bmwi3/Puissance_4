@@ -13,7 +13,7 @@ void logo(void) {                       //affiche notre "logo"
     printf("|  |___|  |   ___|   ___| |   |  |   |  |___  |___    |       |\n");
 }
 
-int option_choice(Grid g1,int colonne) {
+int option_choice(Grid g1) {
     int choice = 0;
     do {        //tant que l'utilisateur ne rentre pas un nombre autorise on présente les choix
         printf("Voulez vous :\n 1.Ajouter un jeton\n 2.Enlever un jeton\n 3.Sauvegarder et quitter\n");
