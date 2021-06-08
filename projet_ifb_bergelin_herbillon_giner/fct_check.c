@@ -6,9 +6,9 @@
 #include <stdio.h>
 
 int trouver_x (Grid g1, int colonne){
-    int x = 0, y = colonne - 1;                                     // x étant la varible de hateur et y la largeur du dernier jeton poser dans la grille
+    int x = 0, y = colonne - 1;                                     // x étant la varible de hateur et y la largeur du dernier jeton posé dans la grille
 
-    while (g1.grille[x][y]!='O' && g1.grille[x][y]!='X' && x<g1.largeur-1){ // on cherche a trouver a qu'elle hauteur a était poser le dernier jetons
+    while (g1.grille[x][y]!='O' && g1.grille[x][y]!='X' && x<g1.largeur-1){ // on cherche a trouver à quelle hauteur a été posé le dernier jetons
         x++;
     }
     return x;
