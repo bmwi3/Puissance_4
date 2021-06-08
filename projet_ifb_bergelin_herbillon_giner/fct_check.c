@@ -146,7 +146,7 @@ int  check_winner(Grid g1, int colonne,char jeton,char *joueur1, char *joueur2) 
     return -1;
 }
 
-int check_grille_pleine (Grid g1,int colonne){
+int check_grille_pleine (Grid g1){
     int compteur_egalite = 0;
                                                          // regarde si le dernier jeton est dans la ligne du haut
         do {                                                        // on compte le nombre de jeton qu'il y a dans la ligne du haut
@@ -182,10 +182,10 @@ int check_ligne_bas_vide(Grid g1){
     }
 
 }
-int check_egalite (Grid g1,int colonne){
+int check_egalite (Grid g1){
     int rejouer;
 
-    if (check_grille_pleine(g1,colonne) == 1) {
+    if (check_grille_pleine(g1) == 1) {
         printf("la grille pleine voulait vous continuer ?\n1 pour continuer\n2 pour quitter\n");
         do {
             scanf("%d", &rejouer);
