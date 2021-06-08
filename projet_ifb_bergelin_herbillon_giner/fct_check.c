@@ -22,11 +22,11 @@ int check_colonne (Grid g1, int colonne, char jeton, int x){
         j++;
         if (x+j > g1.largeur-1){                                    // on regarde si le jeton en dessous est bien dans le tableau
 
-            c = 0;                                                  // le jeton est dessous est hors de la grille
+            c = 0;                                                
         }else if (g1.grille[x + j][y] != jeton ){                   // on compare le dernier jeton jouer avec celui d'en dessous
             c = 0;                                                  // le jeton en dessous est différent
         }
-        compteur_colonne += c ;                                     // le compteur de colonne prrend 1 si jeton d'en dessous identique et 0 sinon
+        compteur_colonne += c ;                                     // le compteur de colonne prend 1 si jeton d'en dessous identique et 0 sinon
 
     } while (c != 0 && compteur_colonne != g1.largeur-2);
 
