@@ -7,7 +7,7 @@
 
 int save(Grid g1,int i,char *joueur1,char *joueur2) {
     FILE*fptr;
-    char array[( g1.largeur - 1)];
+    char tab[( g1.largeur - 1)];
 
     fptr = fopen("save.txt", "w");
 
@@ -21,9 +21,9 @@ int save(Grid g1,int i,char *joueur1,char *joueur2) {
     }
     for (int k = 0; k < g1.largeur; k++)//on ecrit dans le fichier save.txt les valeur du tableau ligne par ligne
     {
-        strcpy(array, g1.grille[k]);
+        strcpy(tab, g1.grille[k]);
 
-        fputs(array, fptr);
+        fputs(tab, fptr);
         fputs("\n", fptr);
     }
     fclose(fptr);
