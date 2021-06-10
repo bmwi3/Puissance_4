@@ -12,7 +12,7 @@ int save(Grid g1,int i,char *joueur1,char *joueur2) {
     fptr = fopen("save.txt", "w");
 
     if (fptr == NULL) {//on affiche un message d'erreur si on rencontre un probleme lors de la sauvegarde
-        printf(" File named save.txt does not exist or cannot be opened.\n");
+        printf("Le fichier save.txt n'existe pas ou n'as pas pu etre charge\n");
         return 0;
     } else {
 
